@@ -16,15 +16,18 @@ You will get a jar file in target folder if you package the source file successf
 Input file formats
 --------
 The ped files (--ped) should looks like this:  
+
         Sample2530   sample2530   0 0 0 0  A G G T G G C C A A A A……  
         Sample2539   sample2539   0 0 0 0  G G T T G G C C A A A A……  
 The first and second columns are the DNA sequence name.  
 
-The map files (--map) should looks like this:  
+The map files (--map) should looks like this:   
+
         18	  18:710	0	710  
         18	  18:734	0	734  
 
-the pop files (--pop) should looks like this:  
+the pop files (--pop) should looks like this:   
+
         Sample2952	    1  
         Sample2771	    1  
         ……  
