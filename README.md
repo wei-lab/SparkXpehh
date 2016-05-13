@@ -32,29 +32,21 @@ Usage:   SparkXpehh [options]
 
 The default output format of SparkXpehh recruitment result file looks like:
 
-        ReadNumber	ReadLength	E-value	AlignmentLength	Begin	End	Strand	Identity	Begin	End  ReferenceSequenceName
+        5386	0.00982016	0.01314943	-0.29194100
+        9724	0.01281606	0.01602563	-0.22349024
+        9728	0.02265941	0.02710481	-0.17913598
+        11184	0.02399037	0.03035566	-0.23533049
+        12540	0.02483094	0.03213575	-0.25787866
+        12544	0.02458190	0.03071724	-0.22281366
+        12554	0.03668928	0.04580508	-0.22191039
 
-        1	75nt	4.7e-25	69	1	-	95.65%	3450573	3450641	Ruminococcus_5_1_39B_FAA
-        9	75nt	1.2e-25	1	64	+	98.44%	1029618	1029681	Alistipes_putredinis_DSM_17216
-        10	75nt	2.5e-23	1	72	+	93.06%	3128442	3128513	Prevotella_copri_DSM_18205
-        11	75nt	9.6e-23	75	2	-	91.89%	1018573	1018646	Prevotella_copri_DSM_18205
-        14	75nt	1.0e-07	4	45	+	90.48%	301211	301252	Bacteroides_capillosus_ATCC_29799
-        17	75nt	1.6e-28	69	1	-	98.55%	133030	133098	Bacteroides_vulgatus_ATCC_8482
-        17	75nt	1.6e-28	69	1	-	98.55%	1718708	1718776	Bacteroides_D4
-        17	75nt	1.6e-28	69	1	-	98.55%	601790	601858	Bacteroides_9_1_42FAA
 
 
 Run SparkXpehh:
 --------
-SparkXpehh is based on Spark platform and it's data is stored in Hadoop HDFS, you should upload the reads and reference file to the HDFS cluster before you run the SparkXpehh programming.  
+SparkXpehh is based on Spark platform and it's data is stored in Hadoop HDFS, you should upload the files to the HDFS cluster before you run the SparkXpehh programming.  
 
-        spark-submit --class com.ynu.SparkXpehh --master spark://{spark master address}:{port} --name {app name} {SparkXpehh jar file} --read {read file path on HDFS} --ref {reference file path on HDFS} --result {result store path}  --identity 90 --aligment 40
+        spark-submit --class com.ynu.xpehh.XpehhMemory --master spark://{Spark Master Address}:{port} –name {Application Name} {SparkXPehh Jar file path } -h {ped file path } -m {map file path} -p {pop file path} -r {Result file path} -s {stepsize(default 16)} -t {threshold(default 0.05)} -ps {partition size(default 138)} -a {accuracy  size(default 10)}
 
-SparkXpehh also provide a function to create reference index and store it to HDFS, so you can save a lots of time if you run the test with the same reference file. 
 
-        spark-submit --class com.ynu.CreateRefIndexToHDFS --master spark://{spark master address}:{port} --name {app name} {SparkXpehh jar file} --ref {reference file path on HDFS} --kmersize 11
-        
-After you create the reference index, you can use it in the new test.
-
-        spark-submit --class com.ynu.SparkXpehh --master spark://{spark master address}:{port} --name {app name} {SparkXpehh jar file} --read {read file path on HDFS} --ref {reference file path on HDFS} --refindex {reference index file path on HDFS} --result {result store path}  --identity 90 --aligment 40
 
