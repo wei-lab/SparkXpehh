@@ -31,7 +31,7 @@ the pop files (--pop) should looks like this:
         Sample2952	    1  
         Sample2771	    1  
         ……  
-        Sample2923   	    0  
+        Sample2923   	  0  
         Sample3107	    0  
 
 Output file formats
