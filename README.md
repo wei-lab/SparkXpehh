@@ -46,10 +46,10 @@ The default output format of SparkXpehh recruitment result file looks like:
         12544	0.02458190	0.03071724	-0.22281366
         12554	0.03668928	0.04580508	-0.22191039
 
-first columns：the SNP locus id (as specified in the map file) 
-second columns: unstandardised iHS for allele 0
-third columns: unstandardised iHS for allele 1
-forth colums: XP-EHH value
+first columns：the SNP locus id (as specified in the map file)   
+second columns: unstandardised iHS for allele 0  
+third columns: unstandardised iHS for allele 1  
+forth colums: XP-EHH value  
 
 Usage
 --------
