@@ -120,7 +120,7 @@ object XpehhMemory {
     //  new java.net.URI("hdfs://hadoop-cluster"), new org.apache.hadoop.conf.Configuration())
 
     // 删除输出目录  
-    if (hdfs.exists(output)) hdfs.delete(output, true)
+    // if (hdfs.exists(output)) hdfs.delete(output, true)
 
     // 每个样本的变异字符串
     // <sample2952, ATGCCCGGATT.....>
