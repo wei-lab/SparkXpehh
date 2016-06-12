@@ -11,7 +11,7 @@ SparkXpehh is build using Apache Maven. To build SparkXpehh, run:
         cd SparkXpehh
         mvn compile package
 
-You will get a jar file in target folder if you package the source file successfully. Then, you can run SparkXpehh.
+You will get two jar file in target folder if you package the source file successfully. Then, you can use SparkXpehhV2-0-0.1-SNAPSHOT-executable.jar to test SparkXpehh.
 
 Input file formats
 --------
